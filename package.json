@@ -5,6 +5,9 @@
   "version": "0.0.1",
   "author": "connorsmallman",
   "main": "./dist/main.js",
+  "scripts": {
+    "bundle": "browserify src/main.js -o dist/main.js -t babelify"
+  },
   "devDependencies": {
     "babelify": "6.0.2",
     "eslint": "1.0.0-rc-1",
