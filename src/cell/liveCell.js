@@ -1,17 +1,13 @@
-import AbstractCell from './abstractCell';
-
-class LiveCell extends AbstractCell {
-  changesState(numberOfLiveNeighbors) {
-    return !this.staysAlive(numberOfLiveNeighbors);
+export default class {
+  changesState(liveNeighbors) {
+    return !this.staysAlive(liveNeighbors);
   }
 
   isAlive() {
     return true;
   }
 
-  staysAlive(numberOfLiveNeighbors) {
-    return numberOfLiveNeighbors === 2 || numberOfLiveNeighbors === 3;
+  staysAlive(liveNeighbors) {
+    return liveNeighbors === 2 || liveNeighbors === 3;
   }
 }
-
-export default LiveCell;

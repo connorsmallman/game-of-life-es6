@@ -1,6 +1,4 @@
-import AbstractCell from './abstractCell';
-
-class DeadCell extends AbstractCell {
+export default class {
   changesState(liveNeighbors) {
     return this.becomesAlive(liveNeighbors);
   }
@@ -13,5 +11,3 @@ class DeadCell extends AbstractCell {
     return liveNeighbors === 3;
   }
 }
-
-export default DeadCell;
