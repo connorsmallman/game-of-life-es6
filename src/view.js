@@ -16,7 +16,6 @@ export default class {
     while(child = this.el.firstChild) {
       this.el.removeChild(child);
     }
-
     let fragment = document.createDocumentFragment();
     for (let i = 1; i <= this.width; i++) {
       for (let j = 1; j <= this.height; j++) {

@@ -31,27 +31,12 @@ export default class {
   }
 
   tick() {
-    let callbacks = [];
-
-    this.coordinates.forEach(coordinate => {
-      if (coordinate.changesState()) {
-        callbacks.push(function() {
-          coordinate.nextState();
-        });
-      }
-    });
-
-    callbacks.forEach(callback => callback());
+    _.invokeMap(_.filter(this.coordinates, x => x.changesState()), 'nextState');
+    return void 0;
   }
 
   getCoordinateAt(x, y) {
-    for (let i = 0, length = this.coordinatesCount(), expectedCoordinate = new Coordinate(x, y); i < length; i++) {
-      if (this.coordinates[i].equals(expectedCoordinate)) {
-        return this.coordinates[i];
-      }
-    }
-
-    return null;
+    return _.find(this.coordinates, c => c.equals(new Coordinate(x, y)));
   }
 
   coordinatesCount() {
