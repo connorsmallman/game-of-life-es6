@@ -1,4 +1,5 @@
 import Coordinate from './coordinate';
+import _ from 'lodash';
 
 export default class {
   constructor(columns = 0, rows = 0) {

@@ -1,4 +1,5 @@
-import World from './world';
+import View from './view';
 
-window.GameOfLife = {};
-window.GameOfLife.World = World;
+let view = new View('.game-of-life', 50, 50);
+
+view.loop();

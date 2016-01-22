@@ -6,13 +6,12 @@
   "author": "connorsmallman",
   "main": "./dist/main.js",
   "scripts": {
-    "bundle": "browserify src/main.js -o dist/main.js -t babelify"
+    "build": "npm run index && npm run bundle",
+    "bundle": "browserify -t babelify src/index.js -o dist/bundle.js",
+    "index": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html"
   },
   "devDependencies": {
     "babelify": "6.0.2",
-    "eslint": "1.0.0-rc-1",
-    "karma": "0.13.2",
-    "karma-mocha": "0.2.0",
-    "phantomjs": "1.9.17"
+    "lodash": "^4.0.0"
   }
 }
